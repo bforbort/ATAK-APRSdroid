@@ -41,7 +41,7 @@ buildscript {
     ext.takrepoUrl = getProperty(urlKey, 'http://localhost/')
     ext.takrepoUser = getProperty('takrepo.user', 'invalid')
     ext.takrepoPassword = getProperty('takrepo.password', 'invalid')
-    ext.takdevPlugin = getProperty('takdev.plugin', "${rootDir}/../../atak-gradle-takdev.jar")
+    ext.takdevPlugin = getProperty('takdev.plugin', "${rootDir}/atak-civ/atak-gradle-takdev.jar")
 
     repositories {
         jcenter()
@@ -269,8 +269,8 @@ android {
         }
     }
 
-    if (file("$project.projectDir/../espresso/testSetup.gradle").exists()) {
-         apply from: '../espresso/testSetup.gradle'
+    if (file("$project.projectDir/atak-civ/espresso/testSetup.gradle").exists()) {
+         apply from: 'atak-civ/espresso/testSetup.gradle'
     } else {
          println("espresso test harness not found")
     }
