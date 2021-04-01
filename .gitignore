@@ -91,3 +91,9 @@ atak-civ-sdk-4.2.0.0.zip
 # Android NDK
 android-ndk-r12b/
 android-ndk-r12b-windows-x86_64.zip
+
+# takdev
+.takdev/
+
+# idea
+.idea/
