@@ -279,5 +279,8 @@ android {
 
 dependencies {
     implementation fileTree(dir: 'libs', include: '*.jar')
+    implementation files('../atak-civ/main.jar')
+    implementation files('../atak-civ/atak-javadoc.jar')
+    implementation files('../atak-civ/atak-gradle-takdev.jar')
 }
 
