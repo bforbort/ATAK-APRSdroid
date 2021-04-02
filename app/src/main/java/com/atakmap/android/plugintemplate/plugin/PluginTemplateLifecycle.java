@@ -7,15 +7,16 @@ import java.util.LinkedList;
 
 import com.atakmap.android.maps.MapComponent;
 import com.atakmap.android.maps.MapView;
+import com.atakmap.android.plugintemplate.APRSDroid.PositionRecevier;
 import com.atakmap.android.plugintemplate.PluginTemplateMapComponent;
 
 import transapps.maps.plugin.lifecycle.Lifecycle;
 import android.app.Activity;
 import android.content.Context;
+import android.content.IntentFilter;
 import android.content.res.Configuration;
 import com.atakmap.coremap.log.Log;
 
-import android.content.Context;
 import android.content.Intent;
 
 public class PluginTemplateLifecycle implements Lifecycle {
@@ -84,6 +85,13 @@ public class PluginTemplateLifecycle implements Lifecycle {
             }
         }
         startAPRSDroidService();
+        registerIntentReceivers();
+    }
+
+    private void registerIntentReceivers() {
+        IntentFilter positionFilter = new IntentFilter("org.aprsdroid.app.POSITION");
+        PositionRecevier positionRecevier = new PositionRecevier();
+        pluginContext.registerReceiver(positionRecevier,positionFilter);
     }
 
     @Override
