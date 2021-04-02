@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <!-- App -->
-    <string name="app_name">Plugin Template</string>
+    <string name="app_name">ATAK-APRSDroid Plugin</string>
     <!-- description -->
-    <string name="app_desc">This plugin demonstrate bare bones plugin UI, and may be used to start a new plugin project</string>
-
-
+    <string name="app_desc">This plugin allows APRSDroid intigration with ATAK.</string>
+    <!-- incoming -->
+    <string name="incoming">Incoming raw APRS Packets</string>
 
 
 </resources>
