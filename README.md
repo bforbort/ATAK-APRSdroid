@@ -5,5 +5,3 @@ Requires the ATAK SDK version 4.2.0 available at https://github.com/deptofdefens
 the SDK should be extracted into /atak-civ
 
 Requires the Android NDK Revision 12b (June 2016) available at https://developer.android.com/ndk/downloads/older_releases
-
-Currently it just places a marker near your current location for every position report.  I've just started and I think I'll have it working soon.

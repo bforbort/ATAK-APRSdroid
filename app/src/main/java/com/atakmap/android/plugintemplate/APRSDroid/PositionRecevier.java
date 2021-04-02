@@ -16,12 +16,7 @@ public class PositionRecevier extends BroadcastReceiver {
         String callsign = intent.getStringExtra("callsign");
         Location location = intent.getParcelableExtra("location");
         Log.w("APRS Event", callsign + " position: " + location);
-        toast("got one");
         CoTHandler coTHandler = new CoTHandler();
         coTHandler.updateCoT(intent);
-    }
-    private void toast(String str) {
-        Toast.makeText(getMapView().getContext(), str,
-                Toast.LENGTH_LONG).show();
     }
 }

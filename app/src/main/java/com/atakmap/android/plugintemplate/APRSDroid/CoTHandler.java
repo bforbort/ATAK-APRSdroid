@@ -7,6 +7,8 @@ import android.location.Location;
 import com.atakmap.android.icons.UserIcon;
 import com.atakmap.android.maps.Marker;
 import com.atakmap.android.user.PlacePointTool;
+import com.atakmap.coremap.maps.coords.GeoPoint;
+import com.atakmap.coremap.maps.coords.GeoPointMetaData;
 
 import java.util.UUID;
 
@@ -16,10 +18,13 @@ public class CoTHandler {
     public void updateCoT(Intent intent) {
         String callsign = intent.getStringExtra("callsign");
         Location location = intent.getParcelableExtra("location");
-
+        GeoPointMetaData point = new GeoPointMetaData();
+        GeoPoint point1 = GeoPoint.createMutable();
+        point1.set(location.getLatitude(),location.getLongitude(),location.getAltitude());
+        point.set(point1);
         PlacePointTool.MarkerCreator mc = new PlacePointTool.MarkerCreator(
                 getMapView().getPointWithElevation());
-        mc.setUid(UUID.randomUUID().toString());
+        mc.setUid("APRS." + callsign);
         mc.setCallsign(callsign);
         mc.setType("a-f-A");
         mc.showCotDetails(false);
