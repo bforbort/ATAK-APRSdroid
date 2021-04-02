@@ -15,6 +15,9 @@ import android.content.Context;
 import android.content.res.Configuration;
 import com.atakmap.coremap.log.Log;
 
+import android.content.Context;
+import android.content.Intent;
+
 public class PluginTemplateLifecycle implements Lifecycle {
 
     private final Context pluginContext;
@@ -28,6 +31,22 @@ public class PluginTemplateLifecycle implements Lifecycle {
         this.overlays = new LinkedList<>();
         this.mapView = null;
         PluginNativeLoader.init(ctx);
+    }
+
+    // launch APRSdroid tracker
+    public void startAPRSDroidService() {
+        Intent i = new Intent("org.aprsdroid.app.SERVICE").setPackage("org.aprsdroid.app");
+        try {
+            // Tell APRSDroid to start tracking
+            mapView.getContext().startService(i);
+            Log.w(TAG, "APRSDroid started");
+            // Send test message at start
+            i = new Intent("org.aprsdroid.app.SEND_PACKET").setPackage("org.aprsdroid.app");
+            i.putExtra("data", "ATAK Started");
+            mapView.getContext().startService(i);
+        } catch (Exception e) {
+            Log.w(TAG, "APRSDroid did not start");
+        }
     }
 
     @Override
@@ -64,6 +83,7 @@ public class PluginTemplateLifecycle implements Lifecycle {
                 iter.remove();
             }
         }
+        startAPRSDroidService();
     }
 
     @Override
