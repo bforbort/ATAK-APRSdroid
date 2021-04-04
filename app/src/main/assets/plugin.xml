@@ -4,12 +4,12 @@
 
     <extension
         type="transapps.maps.plugin.lifecycle.Lifecycle"
-        impl="com.atakmap.android.plugintemplate.plugin.PluginTemplateLifecycle"
+        impl="com.atakmap.android.aprsdroid.plugin.aprsdroidLifecycle"
         singleton="true" />
 
     <extension
         type="transapps.maps.plugin.tool.ToolDescriptor"
-        impl="com.atakmap.android.plugintemplate.plugin.PluginTemplateTool"
+        impl="com.atakmap.android.aprsdroid.plugin.aprsdroidTool"
         singleton="true" />
 
 </plugin>

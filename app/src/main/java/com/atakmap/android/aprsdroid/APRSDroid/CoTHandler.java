@@ -1,4 +1,4 @@
-package com.atakmap.android.plugintemplate.APRSDroid;
+package com.atakmap.android.aprsdroid.APRSDroid;
 
 import android.content.Intent;
 import android.graphics.Color;

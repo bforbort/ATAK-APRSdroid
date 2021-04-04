@@ -1,5 +1,5 @@
 
-package com.atakmap.android.plugintemplate;
+package com.atakmap.android.aprsdroid;
 
 import android.content.Context;
 import android.content.Intent;
@@ -9,15 +9,15 @@ import com.atakmap.android.maps.MapView;
 import com.atakmap.android.dropdown.DropDownMapComponent;
 
 import com.atakmap.coremap.log.Log;
-import com.atakmap.android.plugintemplate.plugin.R;
+import com.atakmap.android.aprsdroid.plugin.R;
 
-public class PluginTemplateMapComponent extends DropDownMapComponent {
+public class aprsdroidMapComponent extends DropDownMapComponent {
 
-    private static final String TAG = "PluginTemplateMapComponent";
+    private static final String TAG = "aprsdroidMapComponent";
 
     private Context pluginContext;
 
-    private PluginTemplateDropDownReceiver ddr;
+    private aprsdroidDropDownReceiver ddr;
 
     public void onCreate(final Context context, Intent intent,
             final MapView view) {
@@ -26,12 +26,12 @@ public class PluginTemplateMapComponent extends DropDownMapComponent {
         super.onCreate(context, intent, view);
         pluginContext = context;
 
-        ddr = new PluginTemplateDropDownReceiver(
+        ddr = new aprsdroidDropDownReceiver(
                 view, context);
 
         Log.d(TAG, "registering the plugin filter");
         DocumentedIntentFilter ddFilter = new DocumentedIntentFilter();
-        ddFilter.addAction(PluginTemplateDropDownReceiver.SHOW_PLUGIN);
+        ddFilter.addAction(aprsdroidDropDownReceiver.SHOW_PLUGIN);
         registerDropDownReceiver(ddr, ddFilter);
     }
 

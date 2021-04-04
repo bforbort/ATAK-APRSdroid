@@ -1,5 +1,5 @@
 
-package com.atakmap.android.plugintemplate;
+package com.atakmap.android.aprsdroid;
 
 import android.content.Context;
 import android.content.Intent;
@@ -7,25 +7,25 @@ import android.view.View;
 
 import com.atak.plugins.impl.PluginLayoutInflater;
 import com.atakmap.android.maps.MapView;
-import com.atakmap.android.plugintemplate.plugin.R;
+import com.atakmap.android.aprsdroid.plugin.R;
 import com.atakmap.android.dropdown.DropDown.OnStateListener;
 import com.atakmap.android.dropdown.DropDownReceiver;
 
 import com.atakmap.coremap.log.Log;
 
-public class PluginTemplateDropDownReceiver extends DropDownReceiver implements
+public class aprsdroidDropDownReceiver extends DropDownReceiver implements
         OnStateListener {
 
-    public static final String TAG = PluginTemplateDropDownReceiver.class
+    public static final String TAG = aprsdroidDropDownReceiver.class
             .getSimpleName();
 
-    public static final String SHOW_PLUGIN = "com.atakmap.android.plugintemplate.SHOW_PLUGIN";
+    public static final String SHOW_PLUGIN = "com.atakmap.android.aprsdroid.SHOW_PLUGIN";
     private final View templateView;
     private final Context pluginContext;
 
     /**************************** CONSTRUCTOR *****************************/
 
-    public PluginTemplateDropDownReceiver(final MapView mapView,
+    public aprsdroidDropDownReceiver(final MapView mapView,
             final Context context) {
         super(mapView);
         this.pluginContext = context;

@@ -1,5 +1,5 @@
 
-package com.atakmap.android.plugintemplate.plugin;
+package com.atakmap.android.aprsdroid.plugin;
 
 import java.util.Collection;
 import java.util.Iterator;
@@ -7,8 +7,8 @@ import java.util.LinkedList;
 
 import com.atakmap.android.maps.MapComponent;
 import com.atakmap.android.maps.MapView;
-import com.atakmap.android.plugintemplate.APRSDroid.PositionRecevier;
-import com.atakmap.android.plugintemplate.PluginTemplateMapComponent;
+import com.atakmap.android.aprsdroid.APRSDroid.PositionRecevier;
+import com.atakmap.android.aprsdroid.aprsdroidMapComponent;
 
 import transapps.maps.plugin.lifecycle.Lifecycle;
 import android.app.Activity;
@@ -19,15 +19,15 @@ import com.atakmap.coremap.log.Log;
 
 import android.content.Intent;
 
-public class PluginTemplateLifecycle implements Lifecycle {
+public class aprsdroidLifecycle implements Lifecycle {
 
     private final Context pluginContext;
     private final Collection<MapComponent> overlays;
     private MapView mapView;
 
-    private final static String TAG = "PluginTemplateLifecycle";
+    private final static String TAG = "aprsdroidLifecycle";
 
-    public PluginTemplateLifecycle(Context ctx) {
+    public aprsdroidLifecycle(Context ctx) {
         this.pluginContext = ctx;
         this.overlays = new LinkedList<>();
         this.mapView = null;
@@ -64,19 +64,19 @@ public class PluginTemplateLifecycle implements Lifecycle {
             return;
         }
         this.mapView = (MapView) arg1.getView();
-        PluginTemplateLifecycle.this.overlays
-                .add(new PluginTemplateMapComponent());
+        aprsdroidLifecycle.this.overlays
+                .add(new aprsdroidMapComponent());
 
         // create components
-        Iterator<MapComponent> iter = PluginTemplateLifecycle.this.overlays
+        Iterator<MapComponent> iter = aprsdroidLifecycle.this.overlays
                 .iterator();
         MapComponent c;
         while (iter.hasNext()) {
             c = iter.next();
             try {
-                c.onCreate(PluginTemplateLifecycle.this.pluginContext,
+                c.onCreate(aprsdroidLifecycle.this.pluginContext,
                         arg0.getIntent(),
-                        PluginTemplateLifecycle.this.mapView);
+                        aprsdroidLifecycle.this.mapView);
             } catch (Exception e) {
                 Log.w(TAG,
                         "Unhandled exception trying to create overlays MapComponent",
