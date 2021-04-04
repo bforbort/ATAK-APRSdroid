@@ -1,3 +1,9 @@
 [submodule "lib/javAPRSlib"]
 	path = lib/javAPRSlib
 	url = https://github.com/ab0oo/javAPRSlib.git
+[submodule "libs/javAPRSlib"]
+	path = libs/javAPRSlib
+	url = https://github.com/ab0oo/javAPRSlib.git
+[submodule "libs/aprsdroid"]
+	path = libs/aprsdroid
+	url = https://github.com/ge0rg/aprsdroid.git
