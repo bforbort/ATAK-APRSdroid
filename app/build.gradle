@@ -246,7 +246,7 @@ android {
             setProperty("archivesBaseName", "ATAK-Plugin-" + rootProject.name + "-" + PLUGIN_VERSION + "-" + getVersionName() + "-" + ATAK_VERSION)
             defaultConfig.versionCode = getVersionCode()
             defaultConfig.versionName = PLUGIN_VERSION + " (" + getVersionName() + ") - [" + ATAK_VERSION + "]"
-            main.java.srcDirs += 'src/main/../../../libs/javAPRSlib/src/main'
+            main.java.srcDirs += 'src/main/../../../libs/javAPRSlib/src/main/java'
         }
 
         // Move the tests to tests/java, tests/res, etc...
@@ -283,6 +283,5 @@ dependencies {
     implementation files('../atak-civ/main.jar')
     implementation files('../atak-civ/atak-javadoc.jar')
     implementation files('../atak-civ/atak-gradle-takdev.jar')
-    implementation files('../libs/javAPRSlib.jar')
 }
 
