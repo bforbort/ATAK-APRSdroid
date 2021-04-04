@@ -283,5 +283,6 @@ dependencies {
     implementation files('../atak-civ/main.jar')
     implementation files('../atak-civ/atak-javadoc.jar')
     implementation files('../atak-civ/atak-gradle-takdev.jar')
+    implementation files('../libs/javAPRSlib.jar')
 }
 
