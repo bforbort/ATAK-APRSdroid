@@ -50,6 +50,13 @@ public class aprsdroidLifecycle implements Lifecycle {
         }
     }
 
+    // Register the Intent Receivers
+    private void registerIntentReceivers() {
+        IntentFilter positionFilter = new IntentFilter("org.aprsdroid.app.POSITION");
+        PositionRecevier positionRecevier = new PositionRecevier();
+        pluginContext.registerReceiver(positionRecevier,positionFilter);
+    }
+
     @Override
     public void onConfigurationChanged(Configuration arg0) {
         for (MapComponent c : this.overlays)
@@ -86,12 +93,6 @@ public class aprsdroidLifecycle implements Lifecycle {
         }
         startAPRSDroidService();
         registerIntentReceivers();
-    }
-
-    private void registerIntentReceivers() {
-        IntentFilter positionFilter = new IntentFilter("org.aprsdroid.app.POSITION");
-        PositionRecevier positionRecevier = new PositionRecevier();
-        pluginContext.registerReceiver(positionRecevier,positionFilter);
     }
 
     @Override
