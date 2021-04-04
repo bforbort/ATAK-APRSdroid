@@ -43,7 +43,7 @@ public class CoTHandler {
         m.refresh(getMapView().getMapEventDispatcher(), null,
                 this.getClass());
     }
-    public static void updatePosition(String callsign, GeoPoint geoPoint, String comment) {
+    public static void updatePosition(String callsign, GeoPoint geoPoint, int course, int speed, String comment) {
         GeoPointMetaData geoPointMetaData = GeoPointMetaData.wrap(geoPoint);
         PlacePointTool.MarkerCreator mc = new PlacePointTool.MarkerCreator(geoPointMetaData);
         mc.setUid("APRS." + callsign);
@@ -54,10 +54,10 @@ public class CoTHandler {
         Marker m = mc.placePoint();
         // the stle of the marker is by default set to show an arrow, this will allow for full
         // rotation.   You need to enable the heading mask as well as the noarrow mask
-//        m.setStyle(m.getStyle()
-//                | Marker.STYLE_ROTATE_HEADING_MASK
-//                | Marker.STYLE_ROTATE_HEADING_NOARROW_MASK);
-//        m.setTrack(location.getBearing(), location.getSpeed());
+        m.setStyle(m.getStyle()
+                | Marker.STYLE_ROTATE_HEADING_MASK
+                | Marker.STYLE_ROTATE_HEADING_NOARROW_MASK);
+        m.setTrack(course, speed);
         m.setMetaInteger("color", Color.YELLOW);
         m.setMetaString(IconsetPath,
                 "34ae1613-9645-4222-a9d2-e5f243dea2865/Military/A10.png");
