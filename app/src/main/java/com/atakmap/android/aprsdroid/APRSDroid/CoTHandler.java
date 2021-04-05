@@ -3,11 +3,14 @@ package com.atakmap.android.aprsdroid.APRSDroid;
 import com.atakmap.android.maps.Marker;
 import com.atakmap.android.user.PlacePointTool;
 import com.atakmap.coremap.maps.coords.GeoPoint;
+import com.atakmap.coremap.maps.coords.GeoPointMetaData;
 
 import static com.atakmap.android.maps.MapView.getMapView;
 
 public class CoTHandler {
-    public static void updatePosition(String callsign, GeoPoint geoPoint, int course, int speed, String comment) {
+    public static void updatePosition(String callsign, GeoPoint geoPoint,
+                                      int course, int speed, String comment,
+                                      char symbolTable, char symbolCode) {
         PlacePointTool.MarkerCreator mc = new PlacePointTool.MarkerCreator(geoPoint);
         mc.setUid("APRS." + callsign);
         mc.setCallsign(callsign);
