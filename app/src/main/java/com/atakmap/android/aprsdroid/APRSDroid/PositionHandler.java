@@ -12,8 +12,9 @@ public class PositionHandler {
         PositionPacket positionPacket = (PositionPacket)aprsPacket.getAprsInformation();
         Position position = positionPacket.getPosition();
 
+        //TODO: Figure out position ambiguity
         GeoPoint geoPoint = new GeoPoint(position.getLatitude(),position.getLongitude(),
-                position.getAltitude(), (double) (position.getPositionAmbiguity() * 185),
+                position.getAltitude(), (double) position.getPositionAmbiguity(),
                 (double) 9999999);
 
         CourseAndSpeedExtension cse = (CourseAndSpeedExtension)positionPacket.getExtension();
