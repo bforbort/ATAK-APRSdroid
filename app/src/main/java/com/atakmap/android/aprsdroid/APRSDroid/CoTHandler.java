@@ -28,6 +28,9 @@ public class CoTHandler {
         m.setTrack(course, (double) speed);
         m.setRemarks(comment);
 
+        // TODO: APRS icons
+        m.setMetaString("IconsetPath", new String("COT_MAPPING_2525B/a-n/a-n-G"));
+
         // TODO: make this configurable
         // 30 minute TTL
         m.setMetaLong("autoStaleDuration", 1800000L);
