@@ -5,6 +5,7 @@ import java.util.Collection;
 import java.util.Iterator;
 import java.util.LinkedList;
 
+import com.atakmap.android.aprsdroid.APRSDroid.MessageRecevier;
 import com.atakmap.android.maps.MapComponent;
 import com.atakmap.android.maps.MapView;
 import com.atakmap.android.aprsdroid.APRSDroid.PositionRecevier;
@@ -55,6 +56,10 @@ public class aprsdroidLifecycle implements Lifecycle {
         IntentFilter positionFilter = new IntentFilter("org.aprsdroid.app.POSITION");
         PositionRecevier positionRecevier = new PositionRecevier();
         pluginContext.registerReceiver(positionRecevier,positionFilter);
+
+        IntentFilter messageFilter = new IntentFilter("org.aprsdroid.app.MESSAGE");
+        MessageRecevier messageRecevier = new MessageRecevier();
+        pluginContext.registerReceiver(messageRecevier,messageFilter);
     }
 
     @Override
