@@ -14,7 +14,7 @@ public class PositionHandler {
 
         //TODO: Figure out position ambiguity
         GeoPoint geoPoint = new GeoPoint(position.getLatitude(),position.getLongitude(),
-                position.getAltitude(), (double) position.getPositionAmbiguity(),
+                (double) position.getAltitude(), (double) position.getPositionAmbiguity(),
                 (double) 9999999);
 
         CourseAndSpeedExtension cse = (CourseAndSpeedExtension)positionPacket.getExtension();
