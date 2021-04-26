@@ -13,7 +13,7 @@ public class MessageRecevier extends BroadcastReceiver {
             String dest = intent.getStringExtra("dest");
             String body = intent.getStringExtra("body");
             // TODO: Parse message
-            // Toast.makeText(context,body,Toast.LENGTH_LONG).show();
+            Toast.makeText(context,body,Toast.LENGTH_LONG).show();
 
         } catch (Exception e) {
             e.printStackTrace();
